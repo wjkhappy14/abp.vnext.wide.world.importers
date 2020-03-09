@@ -99,7 +99,7 @@ namespace Wide.World.Importers
             context.Services.AddSwaggerGen(
                 options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "Importers API", Version = "v1"});
+                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "进口商(API)", Version = "v1"});
                     options.DocInclusionPredicate((docName, description) => true);
                 });
         }
