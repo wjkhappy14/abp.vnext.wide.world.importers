@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\purchasing\src\Wide.World.Importers.Purchasing.EntityFrameworkCore\Wide.World.Importers.Purchasing.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\sales\src\Wide.World.Importers.Sales.EntityFrameworkCore\Wide.World.Importers.Sales.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\modules\warehouse\src\Wide.World.Importers.Warehouse.MongoDB\Wide.World.Importers.Warehouse.MongoDB.csproj" />
     <ProjectReference Include="..\Wide.World.Importers.EntityFrameworkCore\Wide.World.Importers.EntityFrameworkCore.csproj" />
   </ItemGroup>
 

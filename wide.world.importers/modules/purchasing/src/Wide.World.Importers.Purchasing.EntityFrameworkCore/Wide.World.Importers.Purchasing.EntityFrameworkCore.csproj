@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Wide.World.Importers.Purchasing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="2.2.1" />
+    <ProjectReference Include="..\Wide.World.Importers.Purchasing.Domain\Wide.World.Importers.Purchasing.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

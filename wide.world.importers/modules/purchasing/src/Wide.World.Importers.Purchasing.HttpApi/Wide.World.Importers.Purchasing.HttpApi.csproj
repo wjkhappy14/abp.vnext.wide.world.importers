@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Wide.World.Importers.Purchasing</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.2.1" />
+    <ProjectReference Include="..\Wide.World.Importers.Purchasing.Application.Contracts\Wide.World.Importers.Purchasing.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

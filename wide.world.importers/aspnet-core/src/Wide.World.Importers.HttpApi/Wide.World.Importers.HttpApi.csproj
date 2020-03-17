@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\purchasing\src\Wide.World.Importers.Purchasing.HttpApi\Wide.World.Importers.Purchasing.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\sales\src\Wide.World.Importers.Sales.HttpApi\Wide.World.Importers.Sales.HttpApi.csproj" />
+    <ProjectReference Include="..\..\..\modules\warehouse\src\Wide.World.Importers.Warehouse.HttpApi\Wide.World.Importers.Warehouse.HttpApi.csproj" />
     <ProjectReference Include="..\Wide.World.Importers.Application.Contracts\Wide.World.Importers.Application.Contracts.csproj" />
   </ItemGroup>
 
