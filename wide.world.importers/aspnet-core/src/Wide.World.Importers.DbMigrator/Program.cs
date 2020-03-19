@@ -26,6 +26,7 @@ namespace Wide.World.Importers.DbMigrator
                 .CreateLogger();
 
             await CreateHostBuilder(args).RunConsoleAsync();
+            System.Environment.Exit(0);
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
