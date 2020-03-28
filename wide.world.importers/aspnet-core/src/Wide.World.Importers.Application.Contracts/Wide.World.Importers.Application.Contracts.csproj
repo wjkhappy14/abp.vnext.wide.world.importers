@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Abp.VNext.Hello\src\Abp.VNext.Hello.Application.Contracts\Abp.VNext.Hello.Application.Contracts.csproj" />
     <ProjectReference Include="..\Wide.World.Importers.Domain.Shared\Wide.World.Importers.Domain.Shared.csproj" />
   </ItemGroup>
 

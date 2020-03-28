@@ -21,11 +21,13 @@ using Volo.Abp.Caching;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
+using Abp.VNext.Hello;
 
 namespace Wide.World.Importers
 {
     [DependsOn(
         typeof(ImportersHttpApiModule),
+        typeof(HelloHttpApiModule),
         typeof(AbpAutofacModule),
         typeof(AbpAspNetCoreMvcUiMultiTenancyModule),
         typeof(ImportersApplicationModule),

@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Abp.VNext.Hello\src\Abp.VNext.Hello.Web\Abp.VNext.Hello.Web.csproj" />
     <ProjectReference Include="..\Wide.World.Importers.Application\Wide.World.Importers.Application.csproj" />
     <ProjectReference Include="..\Wide.World.Importers.EntityFrameworkCore.DbMigrations\Wide.World.Importers.EntityFrameworkCore.DbMigrations.csproj" />
     <ProjectReference Include="..\Wide.World.Importers.HttpApi\Wide.World.Importers.HttpApi.csproj" />

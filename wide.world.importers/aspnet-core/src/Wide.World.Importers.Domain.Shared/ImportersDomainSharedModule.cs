@@ -11,11 +11,13 @@ using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using Abp.VNext.Hello;
 
 namespace Wide.World.Importers
 {
     [DependsOn(
         typeof(AbpAuditLoggingDomainSharedModule),
+        typeof(HelloDomainSharedModule),
         typeof(AbpBackgroundJobsDomainSharedModule),
         typeof(AbpFeatureManagementDomainSharedModule),
         typeof(AbpIdentityDomainSharedModule),

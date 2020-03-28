@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Abp.VNext.Hello\src\Abp.VNext.Hello.Domain\Abp.VNext.Hello.Domain.csproj" />
     <ProjectReference Include="..\..\..\modules\purchasing\src\Wide.World.Importers.Purchasing.Domain\Wide.World.Importers.Purchasing.Domain.csproj" />
     <ProjectReference Include="..\..\..\modules\sales\src\Wide.World.Importers.Sales.Domain\Wide.World.Importers.Sales.Domain.csproj" />
     <ProjectReference Include="..\..\..\modules\warehouse\src\Wide.World.Importers.Warehouse.Domain\Wide.World.Importers.Warehouse.Domain.csproj" />

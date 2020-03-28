@@ -23,4 +23,8 @@
     <Content Remove="Localization\Importers\*.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Abp.VNext.Hello\src\Abp.VNext.Hello.Domain.Shared\Abp.VNext.Hello.Domain.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

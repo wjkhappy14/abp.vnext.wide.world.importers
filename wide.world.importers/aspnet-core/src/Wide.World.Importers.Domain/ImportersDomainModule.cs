@@ -10,11 +10,13 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.IdentityServer;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Abp.VNext.Hello;
 
 namespace Wide.World.Importers
 {
     [DependsOn(
         typeof(ImportersDomainSharedModule),
+        typeof(HelloDomainModule),
         typeof(AbpAuditLoggingDomainModule),
         typeof(AbpBackgroundJobsDomainModule),
         typeof(AbpFeatureManagementDomainModule),

@@ -10,6 +10,7 @@ namespace Wide.World.Importers
 {
     [DependsOn(
         typeof(ImportersDomainModule),
+        typeof(HelloApplicationModule),
         typeof(AbpAccountApplicationModule),
         typeof(ImportersApplicationContractsModule),
         typeof(AbpIdentityApplicationModule),
