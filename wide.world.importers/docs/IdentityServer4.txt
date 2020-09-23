@@ -1,0 +1,126 @@
+IdentityServer4
+	OAuth2.0的四种授权模式
+		客户端凭证模式：client credentials
+			该方法通常用于服务器之间的通讯
+			客户端凭证模式无需User的授权，授权仅发生在Client与IdentityServer之间
+			流程
+				配置IdentityServer
+					IdentityServer初始定义保护的Api资源列表
+					IdentityServer初始预置允许访问的Client
+						ClientId
+						ClientSecrets
+						AllowedScopes
+				配置Resource
+					定义受保护的WebApi
+					配置认证中间件
+				Client使用凭证申请令牌访问资源
+		密码模式：resource owner password credentials
+			通过User的用户名和密码申请访问令牌
+			该模式仅推荐应用于“受信任的应用”,否则容易造成密码泄漏
+			流程同客户端凭证模式：区别在于GrandType的类型，及访问令牌的申请
+		授权码（混合）模式：authorization code
+			Client与Identity Server之间分两步进行认证和授权
+				1. 通过认证后，Identity Server颁发【Authorization Code】
+				2. Client使用【Authorization Code】向Identity Server申请【Access Token
+		简化模式：implicit
+			直接在浏览器中向认证服务器申请令牌，跳过了第三方客户端服务器
+			通过跳转至认证服务器登录界面进行认证
+			流程
+				配置IdentityServer
+					定义IdentityResource
+					配置Client
+						设置登录跳转链接
+						设置退出登录链接
+				配置客户端
+					配置认证中间件
+					添加登录认证界面
+	What
+		OpenId Connect && OAuth2.0
+			OpenId 用于认证（Authentication）
+			OAuth2.0 用于授权（Authorization）
+				OAuth2.0 授权流程
+			OIDC=OpenID Connect =(Identity, Authentication) + OAuth 2.0
+		特性
+			认证即服务
+			Api访问控制
+			第三方登陆
+			灵活定制
+		解决了什么问题
+			集中认证和授权
+			单点登录和注销
+			支持Web应用、移动应用、桌面应用
+		一句话解释
+			IdentityServer4是为ASP.NET CORE量身定制的实现了OpenId Connect和OAuth2.0协议的认证授权中间件。我们仅需要提供登录和注销界面即可。
+	How
+		IdentityServer
+			1. 配置IdentityServer中间件
+				1. 配置受保护的资源列表
+					Identity Resource
+						OpenId
+						Profile
+						Address
+						Phone
+						Email
+					Api Resource
+						API Name
+						UserClaims
+						ApiSecrets
+						Scopes
+				2. 配置允许验证的Client
+					ClientId
+					ClientSecrets
+					AllowedGrandTypes
+						Implicit
+						Authorization Code
+						Hybrid
+						ResourceOwnerPassword
+						ClientCredentials
+					AllowedScopes
+			2. 配置Authtication中间件
+				1. 配置第三方 identity provider
+				2. 配置OIDC
+			3. 添加IdentityServer中间件到Pipeline
+		Resource
+			1. 配置Authorization 中间件
+			2. 配置Authentication 中间件
+			3. 添加Authentication中间件到Pipeline
+		Client
+			ASP.NET 集成
+				1. 配置Authentication 中间件
+				2. 配置OIDC身份认证中间件
+				3. 添加Authentication中间件到Pipeline
+			Console
+				1. 使用DiscoverClient发现Token Endpoint
+				2. 使用TokenClient请求Access Token
+				3. 使用HttpClient访问Api
+	术语
+		User（用户）
+		Client（客户端）
+		Resource（资源）
+			Identity Data（身份数据）
+			Apis
+		IdentityServer（认证授权服务器）
+		Token
+			Access Token（访问令牌）
+			Identity Token（身份令牌）
+			访问令牌较身份令牌更敏感，应该按需提供
+		Bearer认证
+			BEARER_TOKEN/access_token
+			Token编码方式
+				JWT
+					组成部分
+						Header（Base64Url编码）
+							alg
+							typ
+						Payload（Base64Url编码）
+							reserved claims
+							public claims
+							private claims
+						Signature
+							使用保存在服务端的密钥对其签名，确保不被篡改
+					优点
+						通用
+						紧凑
+						扩展
+	Other
+		Reference Tokens
